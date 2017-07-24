@@ -29,7 +29,13 @@ def fileSave(data) :
 		f.write(str(data) + '\n')
 
 def dbSave(data) :
+<<<<<<< HEAD
 	query = "Insert into data(device_No, temperature, humidity,time) values (%s,%s,%s,now());"
+=======
+	query = "Insert into data(temperature, humidity, time) values (%s,%s, now());"
+	curs.execute(query, (data['temperature'],data['humidity']))
+	conn.commit()	
+>>>>>>> 19e5fe5a7c6bfb854e2f01eb7c33d9ef03f838c8
 
 	curs.execute(query, (data['device_No'],data['temperature'],data['humidity']))
 	conn.commit() # use commit if db can be applied	
